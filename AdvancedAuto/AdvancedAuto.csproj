@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\lock_close_icon.png" />
+    <None Remove="Images\lock_open_icon.png" />
+    <None Remove="Images\password_icon.png" />
+    <None Remove="Images\username_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\lock_close_icon.png" />
+    <Resource Include="Images\lock_open_icon.png" />
+    <Resource Include="Images\password_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\username_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
