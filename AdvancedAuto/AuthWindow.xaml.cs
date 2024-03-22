@@ -75,7 +75,22 @@ namespace AdvancedAuto
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            grdLogIn.Visibility = Visibility.Hidden;
+            
+        }
+
+        private void btnToSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (grdSignIn.Visibility != Visibility.Hidden)
+            {
+                grdSignIn.Visibility = Visibility.Hidden;
+                grdSignUp.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                grdSignIn.Visibility = Visibility.Visible;
+                grdSignUp.Visibility = Visibility.Hidden;
+            }
+            
         }
     }
 }

@@ -7,75 +7,125 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         Title="AuthWindow" Height="450" Width="800">
     <Grid>
-        
-    
-    <Grid x:Name="grdLogIn">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.5*"/>
-        </Grid.ColumnDefinitions>
-
-        <Border CornerRadius="10, 0, 0, 10">
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#3AA9AD" Offset="0"/>
-                    <GradientStop Color="#3AADA1" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-        </Border>
-
-        <Grid>
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="Sign Up" Style="{StaticResource titleText}"/>
-                <TextBlock Text="If you don't have an account" Style="{StaticResource subtitleText}" Opacity="0.8" Margin="20, 30"/>
-                <Button Content="Sign Up" Style="{StaticResource button}"/>
-            </StackPanel>
-        </Grid>
-
-
-        <Border Background="#ffffff" Grid.Column="1" CornerRadius="0, 10, 10, 0">
-
-            <StackPanel>
-                <TextBlock Text="Advanced Auto" Style="{StaticResource appName}"/>
-                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Source="/Images/username_icon.png" Height="20"/>
-                        <TextBlock x:Name="textLogin" MouseDown="textLogin_MouseDown" Text=" Login" Style="{StaticResource textHint}"/>
-                        <TextBox x:Name="txtLogin" TextChanged="txtLogin_TextChanged" Style="{StaticResource textBox}"/>
-                    </Grid>
-                </Border>
-
-                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Source="/Images/password_icon.png" Height="20"/>
-                        <TextBlock x:Name="textPass" MouseDown="textPass_MouseDown" Text=" Password" Style="{StaticResource textHint}"/>
-                        <PasswordBox x:Name="txtPass" PasswordChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}"/>
-                        <!--<TextBox x:Name="txtPass" TextChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}" Visibility="Hidden"/>-->
-                        <Image x:Name="imgLock" Source="/Images/lock_close_icon.png" Height="20" Grid.Column="3" MouseDown="Image_MouseDown"/>
-                    </Grid>
-                </Border>
-                <Button x:Name="btnLogIn" Content="LogIn" Style="{StaticResource btnLogin}" Click="btnLogIn_Click"/>
-            </StackPanel>
-        </Border>
-    </Grid>
-        <Grid x:Name="grd2">
+        <Grid x:Name="grdSignIn">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="1" BorderBrush="Red" BorderThickness="1"/>
+            <Border CornerRadius="10, 0, 0, 10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Grid>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Авторизация" Style="{StaticResource titleText}"/>
+                    <TextBlock Text="Если у вас нет аккаунта" Style="{StaticResource subtitleText}" Opacity="0.8" Margin="20, 30"/>
+                    <Button x:Name="btnToSignUp" Content="Регистрация" Style="{StaticResource button}" Click="btnToSignUp_Click"/>
+                </StackPanel>
+            </Grid>
+
+
+            <Border Background="#ffffff" Grid.Column="1" CornerRadius="0, 10, 10, 0">
+
+                <StackPanel>
+                    <TextBlock Text="Advanced Auto" Style="{StaticResource appName}"/>
+                    <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/username_icon.png" Height="20"/>
+                            <TextBlock x:Name="textLogin" MouseDown="textLogin_MouseDown" Text=" Логин" Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtLogin" TextChanged="txtLogin_TextChanged" Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/password_icon.png" Height="20"/>
+                            <TextBlock x:Name="textPass" MouseDown="textPass_MouseDown" Text=" Пароль" Style="{StaticResource textHint}"/>
+                            <PasswordBox x:Name="txtPass" PasswordChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}"/>
+                            <!--<TextBox x:Name="txtPass" TextChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}" Visibility="Hidden"/>-->
+                            <Image x:Name="imgLock" Source="/Images/lock_close_icon.png" Height="20" Grid.Column="3" MouseDown="Image_MouseDown"/>
+                        </Grid>
+                    </Border>
+                    <Button x:Name="btnLogIn" Content="Войти" Style="{StaticResource btnLogin}" Click="btnLogIn_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid x:Name="grdSignUp" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border CornerRadius="10, 0, 0, 10">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Grid>
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock Text="Регистрация" Style="{StaticResource titleText}"/>
+                    <TextBlock Text="Если у вас уже есть аккаунт" Style="{StaticResource subtitleText}" Opacity="0.8" Margin="20, 30"/>
+                    <Button Content="Авторизация" Style="{StaticResource button}" Click="btnToSignUp_Click"/>
+                </StackPanel>
+            </Grid>
+
+
+            <Border Background="#ffffff" Grid.Column="1" CornerRadius="0, 10, 10, 0">
+
+                <StackPanel>
+                    <TextBlock Text="Advanced Auto" Style="{StaticResource appName}"/>
+                    <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/username_icon.png" Height="20"/>
+                            <TextBlock x:Name="textLog" MouseDown="textLogin_MouseDown" Text=" Логин" Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtL" TextChanged="txtLogin_TextChanged" Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/password_icon.png" Height="20"/>
+                            <TextBlock x:Name="textP" MouseDown="textPass_MouseDown" Text=" Пароль" Style="{StaticResource textHint}"/>
+                            <PasswordBox x:Name="txtPas" PasswordChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}"/>
+                            <!--<TextBox x:Name="txtPass" TextChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}" Visibility="Hidden"/>-->
+                            <Image x:Name="imgLo" Source="/Images/lock_close_icon.png" Height="20" Grid.Column="3" MouseDown="Image_MouseDown"/>
+                        </Grid>
+                    </Border>
+                    <Button x:Name="btnLog" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200" Click="btnLogIn_Click"/>
+                </StackPanel>
+            </Border>
         </Grid>
     </Grid>
 </Window>
