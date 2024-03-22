@@ -75,7 +75,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Border Grid.Column="1" BorderBrush="Green" BorderThickness="1"/>
+            <Border Grid.Column="1" BorderBrush="Red" BorderThickness="1"/>
         </Grid>
     </Grid>
 </Window>
