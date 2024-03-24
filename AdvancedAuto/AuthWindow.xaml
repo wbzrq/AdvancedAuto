@@ -67,7 +67,7 @@
                 </StackPanel>
             </Border>
         </Grid>
-        <Grid x:Name="grdSignUp" Visibility="Hidden">
+        <Grid x:Name="grdSignUp" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="1.5*"/>
@@ -103,8 +103,8 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Source="/Images/username_icon.png" Height="20"/>
-                            <TextBlock x:Name="textLog" MouseDown="textLogin_MouseDown" Text=" Логин" Style="{StaticResource textHint}"/>
-                            <TextBox x:Name="txtL" TextChanged="txtLogin_TextChanged" Style="{StaticResource textBox}"/>
+                            <TextBlock x:Name="textNewLogin" MouseDown="textNewLogin_MouseDown" Text=" Логин" Style="{StaticResource textHint}"/>
+                            <TextBox x:Name="txtNewLogin" TextChanged="txtNewLogin_TextChanged" Style="{StaticResource textBox}"/>
                         </Grid>
                     </Border>
 
@@ -117,13 +117,25 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Source="/Images/password_icon.png" Height="20"/>
-                            <TextBlock x:Name="textP" MouseDown="textPass_MouseDown" Text=" Пароль" Style="{StaticResource textHint}"/>
-                            <PasswordBox x:Name="txtPas" PasswordChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}"/>
+                            <TextBlock x:Name="textNewPass" MouseDown="textNewPass_MouseDown" Text=" Пароль" Style="{StaticResource textHint}"/>
+                            <PasswordBox x:Name="txtNewPass" PasswordChanged="txtNewPass_PasswordChanged" Style="{StaticResource textBox}"/>
                             <!--<TextBox x:Name="txtPass" TextChanged="txtPass_PasswordChanged" Style="{StaticResource textBox}" Visibility="Hidden"/>-->
-                            <Image x:Name="imgLo" Source="/Images/lock_close_icon.png" Height="20" Grid.Column="3" MouseDown="Image_MouseDown"/>
+                            <!--<Image x:Name="imgLo" Source="/Images/lock_close_icon.png" Height="20" Grid.Column="3" MouseDown="Image_MouseDown"/>-->
                         </Grid>
                     </Border>
-                    <Button x:Name="btnLog" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200" Click="btnLogIn_Click"/>
+                    <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="5">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/password_icon.png" Height="20"/>
+                            <TextBlock x:Name="textPassConf" MouseDown="textPassConf_MouseDown" Text=" Повтор пароля" Style="{StaticResource textHint}"/>
+                            <PasswordBox x:Name="txtPassConf" PasswordChanged="txtPassConf_PasswordChanged" Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                    <Button x:Name="btnSignUp" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200" Click=""/>
                 </StackPanel>
             </Border>
         </Grid>

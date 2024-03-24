@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace AdvancedAuto
 {
-    /// <summary>
-    /// Логика взаимодействия для AuthWindow.xaml
-    /// </summary>
     public partial class AuthWindow : Window
     {
         public AuthWindow()
@@ -91,6 +88,49 @@ namespace AdvancedAuto
                 grdSignUp.Visibility = Visibility.Hidden;
             }
             
+        }
+
+        private void textNewLogin_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtNewLogin.Focus();
+        }
+
+        private void txtNewLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNewLogin.Text) && txtNewLogin.Text.Length > 0)
+            {
+                textNewLogin.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                textNewLogin.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void textNewPass_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtNewPass.Focus();
+        }
+
+        private void txtNewPass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNewPass.Password) && txtNewPass.Password.Length > 0)
+                textNewPass.Visibility = Visibility.Collapsed;
+            else
+                textNewPass.Visibility = Visibility.Visible;
+        }
+
+        private void textPassConf_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            txtPassConf.Focus();
+        }
+
+        private void txtPassConf_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtPassConf.Password) && txtPassConf.Password.Length > 0)
+                textPassConf.Visibility = Visibility.Collapsed;
+            else
+                textPassConf.Visibility = Visibility.Visible;
         }
     }
 }
