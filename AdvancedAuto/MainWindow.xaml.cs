@@ -19,6 +19,15 @@ namespace AdvancedAuto
         public MainWindow()
         {
             InitializeComponent();
+            for (int i = 0; i < 15; i++)
+            {
+                CreateButtons();
+            }
+        }
+
+        public void CreateButtons()
+        {
+            wpListAuto.Children.Add(new Button());
         }
     }
 }

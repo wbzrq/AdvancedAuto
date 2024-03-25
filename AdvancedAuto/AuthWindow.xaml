@@ -135,7 +135,7 @@
                             <PasswordBox x:Name="txtPassConf" PasswordChanged="txtPassConf_PasswordChanged" Style="{StaticResource textBox}"/>
                         </Grid>
                     </Border>
-                    <Button x:Name="btnSignUp" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200" Click=""/>
+                    <Button x:Name="btnSignUp" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200"/>
                 </StackPanel>
             </Border>
         </Grid>
