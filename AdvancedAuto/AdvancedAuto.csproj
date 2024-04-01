@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AutoImg\teaserAutoImg\porsche_911.jpg" />
     <None Remove="Images\lock_close_icon.png" />
     <None Remove="Images\lock_open_icon.png" />
     <None Remove="Images\password_icon.png" />
@@ -16,6 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="AutoImg\teaserAutoImg\porsche_911.jpg" />
     <Resource Include="Images\lock_close_icon.png" />
     <Resource Include="Images\lock_open_icon.png" />
     <Resource Include="Images\password_icon.png">

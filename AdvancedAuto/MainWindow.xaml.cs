@@ -19,15 +19,20 @@ namespace AdvancedAuto
         public MainWindow()
         {
             InitializeComponent();
-            for (int i = 0; i < 15; i++)
-            {
-                CreateButtons();
-            }
+            CreateImgs();
         }
 
-        public void CreateButtons()
+        public void CreateImgs()
         {
-            wpListAuto.Children.Add(new Button());
+            for (int i = 0; i < 5; i++)
+            {
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri("AutoImg/teaserAutoImg/porsche_911.jpg", UriKind.Relative));
+                img.Width = 50;
+                img.Height = 50;
+                wpListAuto.Children.Add(img);
+            }
+            
         }
     }
 }
