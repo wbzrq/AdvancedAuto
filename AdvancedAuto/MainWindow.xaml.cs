@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdvancedAuto.database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,15 +25,42 @@ namespace AdvancedAuto
 
         public void CreateImgs()
         {
-            for (int i = 0; i < 5; i++)
+            AdvancedautoContext context = new AdvancedautoContext();
+            var teaserAutoInfo = context.Teaserautos.ToList();
+            foreach (var auto in teaserAutoInfo)
             {
+                StackPanel stack = new StackPanel();
+                stack.Orientation = Orientation.Vertical;
+                Border border = new Border();
+                border.BorderThickness = new Thickness(1);
+                border.CornerRadius = new CornerRadius(10);
+                border.Margin = new Thickness(10);
+                border.Child = stack;
+
                 Image img = new Image();
-                img.Source = new BitmapImage(new Uri("AutoImg/teaserAutoImg/porsche_911.jpg", UriKind.Relative));
-                img.Width = 50;
-                img.Height = 50;
-                wpListAuto.Children.Add(img);
+                img.Source = new BitmapImage(new Uri(auto.ImagePath, UriKind.Relative));
+                img.Width = 160;
+                img.Height = 90;
+                img.Margin = new Thickness(5);
+                stack.Children.Add(img);
+
+                TextBlock textBlock = new TextBlock();
+                textBlock.HorizontalAlignment = HorizontalAlignment.Center;
+                textBlock.Text = ConvertToTitleCase(auto.Brand) + " " + ConvertToTitleCase(auto.Model);
+                stack.Children.Add(textBlock);
+
+                wpListAuto.Children.Add(border);
+
+                stack.MouseEnter += (s, e) => { border.BorderBrush = new SolidColorBrush(Colors.LightGray); };
+                stack.MouseLeave += (s, e) => { border.BorderBrush = new SolidColorBrush(Colors.White); };
+
+                
             }
-            
+        }
+
+        public string ConvertToTitleCase(string text)
+        {
+            return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
         }
     }
 }

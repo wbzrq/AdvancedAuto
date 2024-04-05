@@ -12,7 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border>
-            
+
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#3AA9AD" Offset="0"/>
@@ -40,6 +40,23 @@
                 </Grid.ColumnDefinitions>
                 <Border Background="AliceBlue">
                     <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <WrapPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <Button Width="80" Height="40" Style="{StaticResource btnLogin}">
+                                <Border CornerRadius="15">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Button>
+                            <Button Width="100" Height="40" Style="{StaticResource btnLogin}">
+                                <Border CornerRadius="15">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </Button>
+                        </WrapPanel>
                         
                     </Grid>
                 </Border>

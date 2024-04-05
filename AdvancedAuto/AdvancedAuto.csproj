@@ -9,11 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="AutoImg\teaserAutoImg\porsche_911.jpg" />
+    <None Remove="AutoImg\porsche\911\black\back\wheel1.jfif" />
+    <None Remove="AutoImg\porsche\911\black\back\wheel2.jfif" />
+    <None Remove="AutoImg\porsche\911\black\back\wheel3.jfif" />
+    <None Remove="AutoImg\porsche\911\black\back\wheel4.jfif" />
+    <None Remove="AutoImg\porsche\911\black\front\wheel1.jfif" />
+    <None Remove="AutoImg\porsche\911\black\front\wheel2.jfif" />
+    <None Remove="AutoImg\porsche\911\black\front\wheel3.jfif" />
+    <None Remove="AutoImg\porsche\911\black\front\wheel4.jfif" />
     <None Remove="Images\lock_close_icon.png" />
     <None Remove="Images\lock_open_icon.png" />
     <None Remove="Images\password_icon.png" />
     <None Remove="Images\username_icon.png" />
+    <None Remove="teaserAutoImg\porsche_911.jpg" />
+    <None Remove="teaserAutoImg\porsche_cayenne.png" />
+    <None Remove="teaserAutoImg\porsche_panamera.png" />
+    <None Remove="teaserAutoImg\porsche_taycan.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +36,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="AutoImg\teaserAutoImg\porsche_911.jpg" />
+    <Resource Include="AutoImg\porsche\911\black\back\wheel1.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\back\wheel2.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\back\wheel3.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\back\wheel4.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\front\wheel1.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\front\wheel2.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\front\wheel3.jfif" />
+    <Resource Include="AutoImg\porsche\911\black\front\wheel4.jfif" />
     <Resource Include="Images\lock_close_icon.png" />
     <Resource Include="Images\lock_open_icon.png" />
     <Resource Include="Images\password_icon.png">
@@ -34,6 +52,12 @@
     <Resource Include="Images\username_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="teaserAutoImg\porsche_911.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="teaserAutoImg\porsche_cayenne.png" />
+    <Resource Include="teaserAutoImg\porsche_panamera.png" />
+    <Resource Include="teaserAutoImg\porsche_taycan.jpg" />
   </ItemGroup>
 
 </Project>

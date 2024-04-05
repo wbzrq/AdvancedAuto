@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace AdvancedAuto;
+namespace AdvancedAuto.database;
 
 public partial class AdvancedautoContext : DbContext
 {
