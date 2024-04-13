@@ -54,7 +54,12 @@ namespace AdvancedAuto
                 stack.MouseEnter += (s, e) => { border.BorderBrush = new SolidColorBrush(Colors.LightGray); };
                 stack.MouseLeave += (s, e) => { border.BorderBrush = new SolidColorBrush(Colors.White); };
 
-                
+                stack.MouseLeftButtonDown += (s, e) =>
+                {
+                    ConfiguratorWindow configuratorWindow = new ConfiguratorWindow(auto.Brand + auto.Model);
+                    configuratorWindow.Show();
+                    this.Hide();
+                };
             }
         }
 

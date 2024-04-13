@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AdvancedAuto;
+namespace AdvancedAuto.database;
 
 public partial class Teaserauto
 {
