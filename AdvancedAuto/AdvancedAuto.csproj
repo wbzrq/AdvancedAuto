@@ -153,9 +153,11 @@
     <None Remove="AutoImg\porsche\taycan\white\front\wheel2.jfif" />
     <None Remove="AutoImg\porsche\taycan\white\front\wheel3.jfif" />
     <None Remove="AutoImg\porsche\taycan\white\front\wheel4.jfif" />
+    <None Remove="Images\close_icon.png" />
     <None Remove="Images\lock_close_icon.png" />
     <None Remove="Images\lock_open_icon.png" />
     <None Remove="Images\password_icon.png" />
+    <None Remove="Images\profile_icon.png" />
     <None Remove="Images\username_icon.png" />
     <None Remove="teaserAutoImg\porsche_911.jpg" />
     <None Remove="teaserAutoImg\porsche_cayenne.png" />
@@ -332,11 +334,13 @@
     <Resource Include="AutoImg\porsche\taycan\white\front\wheel2.jfif" />
     <Resource Include="AutoImg\porsche\taycan\white\front\wheel3.jfif" />
     <Resource Include="AutoImg\porsche\taycan\white\front\wheel4.jfif" />
+    <Resource Include="Images\close_icon.png" />
     <Resource Include="Images\lock_close_icon.png" />
     <Resource Include="Images\lock_open_icon.png" />
     <Resource Include="Images\password_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\profile_icon.png" />
     <Resource Include="Images\username_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

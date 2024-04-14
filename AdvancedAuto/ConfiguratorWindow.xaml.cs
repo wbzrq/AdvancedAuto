@@ -75,7 +75,7 @@ namespace AdvancedAuto
                 case "gray":
                     return Color.FromRgb(23, 26, 33);
                 case "green":
-                    return Color.FromRgb(23, 26, 33);
+                    return Color.FromRgb(64, 136, 72);
             }
             return Color.FromRgb(0, 0, 0);
         }
@@ -163,6 +163,56 @@ namespace AdvancedAuto
         {
             currentColor = colors[3];
             CreateImages();
+        }
+
+        private void txtLikedConfigurations_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtLikedConfigurations.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void txtLikedConfigurations_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtLikedConfigurations.TextDecorations = null;
+        }
+
+        private void txtSwitchTheme_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtSwitchTheme.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void txtSwitchTheme_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtSwitchTheme.TextDecorations = null;
+        }
+
+        private void txtSwitchAccount_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtSwitchAccount.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void txtSwitchAccount_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtSwitchAccount.TextDecorations = null;
+        }
+
+        private void txtSwitchAccount_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AuthWindow authWindow = new AuthWindow();
+            authWindow.Show();
+            this.Hide();
+        }
+
+        bool isMenuHidden = true;
+        private void imgProfile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (isMenuHidden) grdProfileMenu.Visibility = Visibility.Visible;
+            else grdProfileMenu.Visibility = Visibility.Visible;
+            isMenuHidden = !isMenuHidden;
+        }
+
+        private void imgClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

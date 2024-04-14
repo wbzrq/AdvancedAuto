@@ -7,62 +7,105 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Border>
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#3AA9AD" Offset="0"/>
-                    <GradientStop Color="#3AADA1" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <Button x:Name="tmpbtn" Content="->" Width="100" Click="tmpbtn_Click"/>
-        </Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
 
-        <Border Grid.Row="1" Background="AliceBlue"></Border>
-        <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <StackPanel x:Name="spCarImg">
-                    
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.3*"/>
-                    <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.3*"/>
-                    <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.1*"/>
-                    <RowDefinition Height="0.1*"/>
-                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.4*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="imgClose" Source="/Images/close_icon.png" Grid.Column="2" HorizontalAlignment="Right" Height="15" MouseDown="imgClose_MouseDown"/>
+                    </Grid>
+                    <Image x:Name="imgProfile" Source="/Images/profile_icon.png" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="50" MouseDown="imgProfile_MouseDown"/>
+                    <Button x:Name="tmpbtn" Content="->" Width="100" Click="tmpbtn_Click"/>
+                </Grid>
+            </Border>
 
-                <TextBlock Text="Цвет"/>
-                <WrapPanel Grid.Row="1">
-                    <Rectangle x:Name="imgColor1" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgColor1_MouseDown"/>
-                    <Rectangle x:Name="imgColor2" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgColor2_MouseDown"/>
-                    <Rectangle x:Name="imgColor3" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgColor3_MouseDown"/>
-                    <Rectangle x:Name="imgColor4" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgColor4_MouseDown"/>
-                </WrapPanel>
-                <TextBlock Text="Диски" Grid.Row="2"/>
-                <WrapPanel Grid.Row="3">
-                    <Image x:Name="imgWheel1" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgWheel1_MouseDown"/>
-                    <Image x:Name="imgWheel2" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgWheel2_MouseDown"/>
-                    <Image x:Name="imgWheel3" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgWheel3_MouseDown"/>
-                    <Image x:Name="imgWheel4" Width="70" Height="70" Margin="10, 10, 10, 10" MouseDown="imgWheel4_MouseDown"/>
-                </WrapPanel>
+            <Border Grid.Row="1" Background="AliceBlue"></Border>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="spCarImg">
+
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Цвет" Style="{StaticResource textDetName}"/>
+                    <WrapPanel Grid.Row="1">
+                        <Rectangle x:Name="imgColor1" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgColor1_MouseDown"/>
+                        <Rectangle x:Name="imgColor2" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgColor2_MouseDown"/>
+                        <Rectangle x:Name="imgColor3" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgColor3_MouseDown"/>
+                        <Rectangle x:Name="imgColor4" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgColor4_MouseDown"/>
+                    </WrapPanel>
+                    <TextBlock Text="Диски" Grid.Row="2" Style="{StaticResource textDetName}"/>
+                    <WrapPanel Grid.Row="3">
+                        <Image x:Name="imgWheel1" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgWheel1_MouseDown"/>
+                        <Image x:Name="imgWheel2" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgWheel2_MouseDown"/>
+                        <Image x:Name="imgWheel3" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgWheel3_MouseDown"/>
+                        <Image x:Name="imgWheel4" Width="70" Height="70" Margin="10, 5, 10, 10" MouseDown="imgWheel4_MouseDown"/>
+                    </WrapPanel>
+                    <TextBlock Text="Интерьер" Grid.Row="4" Style="{StaticResource textDetName}"/>
+                    <WrapPanel Grid.Row="5">
+                        <Image x:Name="imgInterior1" Width="70" Height="70" Margin="10, 5, 10, 5" MouseDown="imgWheel1_MouseDown"/>
+                        <Image x:Name="imgInterior2" Width="70" Height="70" Margin="10, 5, 10, 5" MouseDown="imgWheel2_MouseDown"/>
+                        <Image x:Name="imgInterior3" Width="70" Height="70" Margin="10, 5, 10, 5" MouseDown="imgWheel3_MouseDown"/>
+                        <Image x:Name="imgInterior4" Width="70" Height="70" Margin="10, 5, 10, 5" MouseDown="imgWheel4_MouseDown"/>
+                    </WrapPanel>
+                </Grid>
             </Grid>
         </Grid>
+
+        <Grid x:Name="grdProfileMenu" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="1" Grid.Row="1" Background="AliceBlue" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock x:Name="txtLikedConfigurations" Text="Созданные автомобили" Style="{StaticResource textMenu}" MouseEnter="txtLikedConfigurations_MouseEnter" MouseLeave="txtLikedConfigurations_MouseLeave"/>
+                    <TextBlock x:Name="txtSwitchTheme" Text="Сменить тему" Style="{StaticResource textMenu}" MouseEnter="txtSwitchTheme_MouseEnter" MouseLeave="txtSwitchTheme_MouseLeave"/>
+                    <TextBlock x:Name="txtSwitchAccount" Text="Сменить аккаунт" Style="{StaticResource textMenu}" MouseDown="txtSwitchAccount_MouseDown" MouseEnter="txtSwitchAccount_MouseEnter" MouseLeave="txtSwitchAccount_MouseLeave"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
+    
 </Window>

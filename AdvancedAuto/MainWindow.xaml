@@ -7,78 +7,100 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.6*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Border>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border>
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.1*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--<TextBlock Text="Advanced Auto" Style="{StaticResource textAppName}"/>-->
+                    <Image x:Name="imgClose" Source="/Images/close_icon.png" Grid.Column="2" HorizontalAlignment="Right" Height="15" MouseDown="imgClose_MouseDown"/>
+                    <Image x:Name="imgProfile" Source="/Images/profile_icon.png" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" MouseDown="imgProfile_MouseDown"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Background="#ffffff">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.3*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="AliceBlue">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-            <Border.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#3AA9AD" Offset="0"/>
-                    <GradientStop Color="#3AADA1" Offset="1"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.1*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="0.1*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.4*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <!--<TextBlock Text="Advanced Auto" Style="{StaticResource textAppName}"/>-->
-            </Grid>
-        </Border>
-        <Border Grid.Row="1" Background="#ffffff">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.3*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Border Background="AliceBlue">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
+                            <WrapPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                <Button Width="80" Height="40" Style="{StaticResource btnLogin}">
+                                    <Border CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </Button>
+                                <Button Width="100" Height="40" Style="{StaticResource btnLogin}">
+                                    <Border CornerRadius="15">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </Button>
+                            </WrapPanel>
 
-                        <WrapPanel Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                            <Button Width="80" Height="40" Style="{StaticResource btnLogin}">
-                                <Border CornerRadius="15">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </Button>
-                            <Button Width="100" Height="40" Style="{StaticResource btnLogin}">
-                                <Border CornerRadius="15">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </Button>
-                        </WrapPanel>
-                        
-                    </Grid>
-                </Border>
-                <Border Grid.Column="1">
-                    <ScrollViewer x:Name="svListAuto">
-                        <WrapPanel x:Name="wpListAuto">
-                            <!--<Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
-                            <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>-->
-                        </WrapPanel>
-                    </ScrollViewer>
-                </Border>
-            </Grid>
-        </Border>
+                        </Grid>
+                    </Border>
+                    <Border Grid.Column="1">
+                        <ScrollViewer x:Name="svListAuto">
+                            <WrapPanel x:Name="wpListAuto">
+                                <!--<Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>
+                        <Button Width="170" Height="100" Margin="10, 10, 10, 10"/>-->
+                            </WrapPanel>
+                        </ScrollViewer>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid x:Name="grdProfileMenu"  Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Column="1" Grid.Row="1" Background="AliceBlue" CornerRadius="5">
+                <StackPanel>
+                    <TextBlock x:Name="txtLikedConfigurations" Text="Созданные автомобили" Style="{StaticResource textMenu}" MouseEnter="txtLikedConfigurations_MouseEnter" MouseLeave="txtLikedConfigurations_MouseLeave"/>
+                    <TextBlock x:Name="txtSwitchTheme" Text="Сменить тему" Style="{StaticResource textMenu}" MouseEnter="txtSwitchTheme_MouseEnter" MouseLeave="txtSwitchTheme_MouseLeave"/>
+                    <TextBlock x:Name="txtSwitchAccount" Text="Сменить аккаунт" Style="{StaticResource textMenu}" MouseDown="txtSwitchAccount_MouseDown" MouseEnter="txtSwitchAccount_MouseEnter" MouseLeave="txtSwitchAccount_MouseLeave"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
+    
 </Window>

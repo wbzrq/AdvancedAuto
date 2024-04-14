@@ -1,4 +1,4 @@
-﻿using AdvancedAuto.database;
+﻿//using AdvancedAuto.database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +20,61 @@ namespace AdvancedAuto
         public MainWindow()
         {
             InitializeComponent();
-            CreateImgs();
+            //CreateImgs();
+
         }
 
-        public void CreateImgs()
+        private void imgClose_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        bool isMenuHidden = true;
+        private void imgProfile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (isMenuHidden) grdProfileMenu.Visibility = Visibility.Visible;
+            else grdProfileMenu.Visibility = Visibility.Hidden;
+            isMenuHidden = !isMenuHidden;
+        }
+
+        private void txtSwitchAccount_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AuthWindow authWindow = new AuthWindow();
+            authWindow.Show();
+            this.Hide();
+        }
+
+        private void txtSwitchAccount_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtSwitchAccount.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void txtSwitchAccount_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtSwitchAccount.TextDecorations = null;
+        }
+
+        private void txtSwitchTheme_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtSwitchTheme.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void txtSwitchTheme_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtSwitchTheme.TextDecorations = null;
+        }
+
+        private void txtLikedConfigurations_MouseEnter(object sender, MouseEventArgs e)
+        {
+            txtLikedConfigurations.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void txtLikedConfigurations_MouseLeave(object sender, MouseEventArgs e)
+        {
+            txtLikedConfigurations.TextDecorations = null;
+        }
+
+        /*public void CreateImgs()
         {
             AdvancedautoContext context = new AdvancedautoContext();
             var teaserAutoInfo = context.Teaserautos.ToList();
@@ -66,6 +117,6 @@ namespace AdvancedAuto
         public string ConvertToTitleCase(string text)
         {
             return System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
-        }
+        }*/
     }
 }

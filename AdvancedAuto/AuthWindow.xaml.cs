@@ -20,6 +20,7 @@ namespace AdvancedAuto
         public AuthWindow()
         {
             InitializeComponent();
+            //this.WindowState = System.Windows.WindowState.Maximized;
         }
 
         private void textLogin_MouseDown(object sender, MouseButtonEventArgs e)
