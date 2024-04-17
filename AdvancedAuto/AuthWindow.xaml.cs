@@ -1,8 +1,10 @@
-﻿using System;
+﻿using AdvancedAuto.database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +19,7 @@ namespace AdvancedAuto
 {
     public partial class AuthWindow : Window
     {
+        bool isSignIn = true;
         public AuthWindow()
         {
             InitializeComponent();
@@ -73,7 +76,17 @@ namespace AdvancedAuto
 
         private void btnLogIn_Click(object sender, RoutedEventArgs e)
         {
-            
+            AdvancedautoContext context = new AdvancedautoContext();
+            if (txtLogin.Text.Equals(String.Empty)) MessageBox.Show("Введите логин");
+            else if (txtPass.Password.Equals(String.Empty)) MessageBox.Show("Введите пароль");
+            else if(context.Users.FirstOrDefault(x => x.Login == txtLogin.Text && x.Pass == txtPass.Password) != null)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Hide();
+            }
+            else if (context.Users.FirstOrDefault(x => x.Login == txtLogin.Text) != null) MessageBox.Show("Пароль неверный");
+            else MessageBox.Show("Пользователь с таким логином не существует");
         }
 
         private void btnToSignUp_Click(object sender, RoutedEventArgs e)
@@ -132,6 +145,43 @@ namespace AdvancedAuto
                 textPassConf.Visibility = Visibility.Collapsed;
             else
                 textPassConf.Visibility = Visibility.Visible;
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            AdvancedautoContext context = new AdvancedautoContext();
+            if (txtNewLogin.Text.Equals(String.Empty)) MessageBox.Show("Заполните поле логина");
+            else if (txtNewPass.Password.Equals(String.Empty)) MessageBox.Show("Заполните поле пароля");
+            else if (txtPassConf.Password.Equals(String.Empty)) MessageBox.Show("Подтвердите пароль");
+            else if (txtNewPass.Password != txtPassConf.Password) MessageBox.Show("Пароли не совпадают");
+            else if (context.Users.FirstOrDefault(x => x.Login == txtNewLogin.Text) != null) MessageBox.Show("Данный логин уже занят");
+            else if(!ValidateLogin(txtNewLogin.Text)) MessageBox.Show("Логин должен быть от 5 до 10 символов, состоять только из латинских символов и цифр");
+            else if (!ValidatePassword(txtNewPass.Password)) MessageBox.Show("Пароль должен быть от 10 до 20 символов, состоять только из латинских символов, цифр и специальных символов");
+            else
+            {
+                var user = new User() { Login = txtNewLogin.Text, Pass = txtNewPass.Password };
+                context.Users.Add(user);
+                context.SaveChanges();
+                grdSignUp.Visibility = Visibility.Hidden;
+                grdSignIn.Visibility = Visibility.Visible;
+                txtLogin.Text = user.Login;
+                txtNewLogin.Clear();
+                txtNewPass.Clear();
+                txtPassConf.Clear();
+            }
+
+        }
+
+        public bool ValidateLogin(string login)
+        {
+            const string Pattern = "^[a-zA-Z0-9]{5,20}$";
+            return Regex.IsMatch(login, Pattern);
+        }
+
+        public bool ValidatePassword(string password)
+        {
+            const string Pattern = "^[a-zA-Z0-9@#$%^&+=]{10,20}$";
+            return Regex.IsMatch(password, Pattern);
         }
     }
 }

@@ -15,13 +15,19 @@ public partial class AdvancedautoContext : DbContext
     {
     }
 
+    public virtual DbSet<Brand> Brands { get; set; }
+
     public virtual DbSet<Carimage> Carimages { get; set; }
 
     public virtual DbSet<Interiorimage> Interiorimages { get; set; }
 
+    public virtual DbSet<Model> Models { get; set; }
+
     public virtual DbSet<Teaserauto> Teaserautos { get; set; }
 
     public virtual DbSet<Teaserwheel> Teaserwheels { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -29,6 +35,18 @@ public partial class AdvancedautoContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Brand>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("brands_pkey");
+
+            entity.ToTable("brands");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Brand1)
+                .HasMaxLength(50)
+                .HasColumnName("brand");
+        });
+
         modelBuilder.Entity<Carimage>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("carimages_pkey");
@@ -71,6 +89,23 @@ public partial class AdvancedautoContext : DbContext
                 .HasColumnName("model");
         });
 
+        modelBuilder.Entity<Model>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("models_pkey");
+
+            entity.ToTable("models");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.BrandId).HasColumnName("brand_id");
+            entity.Property(e => e.Model1)
+                .HasMaxLength(50)
+                .HasColumnName("model");
+
+            entity.HasOne(d => d.Brand).WithMany(p => p.Models)
+                .HasForeignKey(d => d.BrandId)
+                .HasConstraintName("fk_brand_id");
+        });
+
         modelBuilder.Entity<Teaserauto>(entity =>
         {
             entity.HasKey(e => e.IdTeaserauto).HasName("teaserauto_pkey");
@@ -105,6 +140,21 @@ public partial class AdvancedautoContext : DbContext
             entity.Property(e => e.TwPath)
                 .HasMaxLength(255)
                 .HasColumnName("tw_path");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("users_pkey");
+
+            entity.ToTable("users");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Login)
+                .HasMaxLength(50)
+                .HasColumnName("login");
+            entity.Property(e => e.Pass)
+                .HasMaxLength(255)
+                .HasColumnName("pass");
         });
 
         OnModelCreatingPartial(modelBuilder);

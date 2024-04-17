@@ -158,6 +158,8 @@
     <None Remove="Images\lock_open_icon.png" />
     <None Remove="Images\password_icon.png" />
     <None Remove="Images\profile_icon.png" />
+    <None Remove="Images\shaded_star_icon.png" />
+    <None Remove="Images\unshaded_star_icon.png" />
     <None Remove="Images\username_icon.png" />
     <None Remove="teaserAutoImg\porsche_911.jpg" />
     <None Remove="teaserAutoImg\porsche_cayenne.png" />
@@ -341,6 +343,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\profile_icon.png" />
+    <Resource Include="Images\shaded_star_icon.png" />
+    <Resource Include="Images\unshaded_star_icon.png" />
     <Resource Include="Images\username_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

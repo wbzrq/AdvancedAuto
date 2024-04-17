@@ -107,7 +107,7 @@ namespace AdvancedAuto
 
                 stack.MouseLeftButtonDown += (s, e) =>
                 {
-                    ConfiguratorWindow configuratorWindow = new ConfiguratorWindow(auto.Brand + auto.Model);
+                    ConfiguratorWindow configuratorWindow = new ConfiguratorWindow(auto.Brand, auto.Model);
                     configuratorWindow.Show();
                     this.Hide();
                 };

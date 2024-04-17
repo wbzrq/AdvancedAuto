@@ -67,7 +67,7 @@
                 </StackPanel>
             </Border>
         </Grid>
-        <Grid x:Name="grdSignUp" Visibility="Visible">
+        <Grid x:Name="grdSignUp" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="1.5*"/>
@@ -135,7 +135,7 @@
                             <PasswordBox x:Name="txtPassConf" PasswordChanged="txtPassConf_PasswordChanged" Style="{StaticResource textBox}"/>
                         </Grid>
                     </Border>
-                    <Button x:Name="btnSignUp" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200"/>
+                    <Button x:Name="btnSignUp" Content="Зарегистрироваться" Style="{StaticResource btnLogin}" Width="200" Click="btnSignUp_Click"/>
                 </StackPanel>
             </Border>
         </Grid>
